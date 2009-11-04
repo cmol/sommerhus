@@ -1,0 +1,44 @@
+body > #wrap {
+	height: auto;
+	min-height: 100%;
+}
+
+#main {
+	padding-bottom: 155px; /* must be same height as the footer */
+}
+
+#footer {
+	position: relative;
+	margin-top: -155px; /* negative value of footer height */
+	height: 155px;
+	clear: both;
+	background-color: #baf39a;
+	background-image: url("img/foot-green.png");
+	background-repeat: repeat-x;
+	background-position: bottom;
+	text-align: left;
+}
+
+/*############ CLEAR FIX*/
+.clearfix:after {
+	content: ".";
+	display: block;
+	height: 0;
+	clear: both;
+	visibility: hidden;
+}
+
+.clearfix {
+	display: inline-block;
+}
+/* Hides from IE-mac \*/
+* html .clearfix {
+	height: 1%;
+}
+
+.clearfix {
+	display: block;
+}
+/* End hide from IE-mac */ 
+
+/*############ CLEAR FIX END*/

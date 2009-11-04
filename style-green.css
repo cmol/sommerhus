@@ -1,0 +1,302 @@
+* {
+	margin: 0;
+	padding: 0;
+} 
+
+html, body, #wrap {
+	height: 100%;
+/*	background-color: #baf39a; 94c17c*/
+	background-color: #94c17c;
+	background-image: url('img/bg-grad.png');
+	background-position: top;
+	background-repeat: repeat-x;
+	font-family: Verdana,Sans-Serif;
+	font-size: 10px;
+	text-align: center;
+}
+
+#header {
+	width: 100%;
+	height: 150px;
+	background-image: url("img/green_stripe.png");
+}
+
+#lensboel-dk {
+	background-image: url("img/logo-green-web20-2.png");
+	width: 500px;
+	height: 130px;
+	float: left;
+	margin-left: 10%;
+	margin-top: 10px;
+	z-index: 1;
+}
+
+#logo {
+	background-image: url("img/lensboel_logo_transparent_small.png");
+	width: 250px;
+	height: 124px;
+	float: right;
+	margin-right: 10%;
+	margin-top: 15px;
+	z-index: 1;
+}
+
+#my_user {
+	position: absolute;
+	right: 10%;
+	z-index: 2;
+	color: #fff;
+}
+
+#my_user a {
+	color: #fff;
+	text-decoration: none;
+}
+
+#my_user a:hover {
+	color: #fff;
+	text-decoration: underline;
+}
+
+#topmenu {
+	position: absolute;
+	top: 120px;
+	left: 11%;
+	height: 30px;
+}
+
+#topmenu li {
+	background-image:url("img/trans_menu_nohover.png");
+	color:#51773D;
+	float:left;
+	font-size:15px;
+	font-weight:bold;
+	line-height:30px;
+	list-style-image:none;
+	list-style-position:outside;
+	list-style-type:none;
+	padding:0 15px;
+}
+
+#topmenu  li:hover {
+	background-image:url("img/trans_menu_hover.png");
+	color:#fff;
+	float:left;
+	font-size:15px;
+	font-weight:bold;
+	line-height:30px;
+	list-style-image:none;
+	list-style-position:outside;
+	list-style-type:none;
+	padding:0 15px;
+	cursor: pointer;
+}
+
+#content {
+	width: 79%;
+	margin: 0 auto;
+	text-align: left;
+}
+
+#left {
+	width: 73%;
+	float: left;
+	margin-left: 10px;
+	margin-top: 10px;
+}
+
+#right {
+	width: 25%;
+	float: right;
+	margin-top: 10px;
+	text-align: center;
+}
+
+#page_img_l {
+	float: left;
+}
+
+#page_img_r {
+	float: right;
+}
+
+#prev_next {
+	margin-top: 5px;
+	width: 100%;
+	font-size: 14;
+	font-weight: bold;
+}
+
+#prev_next .left {
+	float: left;
+}
+
+#prev_next .right {
+	float: right;
+}
+
+div.user_list {
+	width: 95%;
+	border-width: 5px;
+	height: 70px;
+	border-bottom: 1px dotted #000;
+}
+
+div.user_info {
+	float: left;
+	width: 20%;
+}
+
+div.user_infos {
+	float: left;
+	width: 30%;
+}
+
+div.user_edit {
+	float: right;
+	width: 15%;
+}
+
+div.user_groups {
+	float: right;
+	width: 35%;
+}
+
+div.blog_container {
+	border-bottom: 1px dotted #000;
+}
+
+div.blog_container a.title {
+	font-size: 20px;
+	color: #51773d;
+	margin-bottom: 10px;
+	margin-left: -2px;
+	font-weight: bold;
+	text-decoration: none;
+		
+}
+
+div.blog_container a.title:hover {
+	font-size: 20px;
+	color: #fff;
+	margin-bottom: 10px;
+	margin-left: -2px;
+	font-weight: bold;
+}
+
+div.blog_container p.author {
+ font-style: italic;
+ color: #555; 
+}
+
+div.blog_container p.author a {
+ font-style: italic;
+ color: #555; 
+}
+
+div.blog_comment {
+	border-bottom: 1px dotted #000;
+}
+
+div.blog_comment p.author {
+ font-style: italic;
+ color: #555; 
+}
+
+div.blog_comment p.author a {
+ font-style: italic;
+ color: #555; 
+}
+
+#do_comment .right {
+	float: right;
+}
+
+#do_comment textarea {
+	width: 100%;
+	height: 150px;
+}
+
+h1 {
+	font-size: 35px;
+	color: #51773d;
+	margin-bottom: 5px;
+	margin-left: -3px;
+}
+
+h2 {
+	font-size: 20px;
+	color: #51773d;
+	margin-bottom: 10px;
+	margin-left: -2px;
+}
+
+p {
+	font-size: 10px;
+	margin-top: 8px;
+}
+
+span.user_data {
+	vertical-align: top;
+	float:left;
+}
+
+p.user_data {
+	width: 50%;
+	height: 20px;
+}
+
+p.user_data_textarea {
+	width: 50%;
+	height: 55px;
+}
+
+p.user_data_textarea_large {
+	width: 50%;
+	height: 300px;
+}
+
+p.user_data input,textarea {
+	float: right;
+}
+
+.field_error {
+	visibility: hidden;
+	z-index: -3;
+	position: absolute;
+	top: 0px;
+	color: #f00;
+	font-weight: bold;			
+	border: 3px solid red;
+	background-color: #ffd2d2;
+	margin-top: 8px;
+	padding: 5px;
+	width: 48%;
+}
+
+.alert {
+	color: #f00;
+	font-weight: bold;			
+	border: 3px solid red;
+	background-color: #ffd2d2;
+	width: 40%;
+	padding: 5px;
+}
+
+.ok {
+	color: green;
+	font-weight: bold;			
+	border: 3px solid green;
+	background-color: #d2ffd2;
+	width: 40%;
+	padding: 5px;
+}
+
+/* Input section start */
+
+textarea.large_ta {
+	height: 300px;
+	width: 85%;
+}
+
+/*  Input section end  */

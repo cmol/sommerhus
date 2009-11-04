@@ -1,0 +1,74 @@
+body {
+background-color: #baf39a;
+}
+
+div.stripe {
+background-image: url("img/green_stripe.png");
+position: absolute;
+top: 0px;
+left: 0px;
+right: 0px;
+height: 150px;
+}
+
+div.main {
+position: relative;
+top: 142px;
+width: 80%;
+height: 70%;
+}
+
+div.container {
+position: absolute;
+left: 0px;
+width: 75%;
+}
+
+div.rightbox {
+position: absolute;
+right: 0px;
+padding: 1%;
+width: 20%;
+}
+
+img.logo {
+position: absolute;
+right: 10%;
+top: 13px;
+}
+
+img.logotext {
+position: absolute;
+left: 10%;
+top: 10px;
+}
+
+div.foot {
+position: absolute;
+z-index: -2;
+bottom: 0px;
+left: 0px;
+right: 0px;
+background-image: url("img/foot-green.png");
+background-repeat: repeat-x;
+background-position: bottom;
+height: 155px;
+
+}
+
+h1 {
+font-family: Verdana, Sans Serif;
+font-size: 35px;
+color: #51773d;
+}
+
+h2 {
+font-family: Verdana, Sans Serif;
+font-size: 20px;
+color: #51773d;
+}
+
+p {
+font-family: Verdana, Sans Serif;
+font-size: 10px;
+}
