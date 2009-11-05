@@ -11,7 +11,7 @@ else
 	{
 		if($_POST['email'] != "" && $_POST['pass'] != "")
 		{
-			$email = mysql_real_escape_string($_POST['email']);
+			$email = clean($_POST['email']);
 			$pass = $_POST['pass'];
 			$md5pass = md5($pass);
 			$query = mysql_query("SELECT * FROM ".$db_prefix."user where email = '$email' AND password = '$md5pass' LIMIT 1") or die(mysql_error());
