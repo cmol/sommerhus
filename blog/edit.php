@@ -10,8 +10,7 @@ else
 	if($good)
 	{
 		echo '
-		<div id="left">
-			<img id="page_img_r" src="img/user.png" alt="user">';
+		<div id="left">';
 		$id = 0;
 		if(is_numeric($_GET['id']))
 		{
