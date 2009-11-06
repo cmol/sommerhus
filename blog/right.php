@@ -11,7 +11,7 @@ else
 		<div id="right">
 			<h2>Menu</h2>
 			<a href="?domain=blog&script=edit">Tilf&oslash;j blog</a><br>
-			<a href="?domain=blog&script=list">Vis liste over blogs</a><br>
+			<a href="?domain=blog&script=search&search_by=all">Vis liste over blogs</a><br>
 			<input type="text" name="search"><input type="submit" value="S&oslash;g">
 		</div>';
 	}
