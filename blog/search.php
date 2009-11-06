@@ -32,13 +32,16 @@ else
 					break;
 				}
 				$query = mysql_query($query_string) or die(mysql_error());
+				echo '
+			<table width="100%">';
 				while($row = mysql_fetch_assoc($query))
 				{
 					echo '
-					<div class="search_results"><a href="?domain=blog&script=blog&id='.$row['id'].'">'.$row['title'].'</a> - '.get_date($row['last_edit']).' - cut_after_x(50 ish, $row[\'text\'])... </div><br>';
+				<tr><td><a href="?domain=blog&script=blog&id='.$row['id'].'">'.$row['title'].'</a> - '.get_date($row['last_edit']).' - cut_after_x(50 ish, $row[\'text\'])... </td></tr>';
 				}
 			}
 		echo '
+			</table>
 		</div>';
 	}
 }
