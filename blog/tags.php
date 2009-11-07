@@ -30,7 +30,7 @@ else
 				}
 			}
 			
-			//Tilføj sortering af array $tag_list
+			arsort($tag_list);
 			
 			echo '
 			<table width="100%">';
