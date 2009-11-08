@@ -10,7 +10,8 @@ else
 		echo '
 		<div id="right">
 			<h2>:: menu ::</h2>
-			<a href="?domain=admin/user">Bruger Admin</a>
+			<a href="?domain=admin/user">Bruger Admin</a><br>
+			<a href="?domain=admin/blog">Blog Admin</a>
 		</div>';
 	}
 }

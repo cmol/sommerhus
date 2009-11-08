@@ -292,6 +292,10 @@ p.user_data input,textarea {
 	padding: 5px;
 }
 
+.red {
+	color: red;
+}
+
 /* Input section start */
 
 textarea.large_ta {

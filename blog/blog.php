@@ -51,8 +51,10 @@ else
 					echo '
 			<div class="blog_comment">';
 					echo '
-				<p class="author"><a href="?domain=user&script=show&id='.$row['author'].'">'.get_by_id("name", $row['author']).'</a> skrev '.get_date($row['date']).'</p>
-				<p>'.format_text(str_replace("<br />", "<br>", nl2br($row['text']))).'</p>';
+				<p class="author"><a href="?domain=user&script=show&id='.$row['author'].'">'.get_by_id("name", $row['author']).'</a> skrev '.get_date($row['date']);
+					if(strstr($_SESSION['groups'],"blog-admin")) echo' - <span class="red" onmouseover="this.style.cursor=\'pointer\'" onclick="disp_confirm(\'?domain=admin/blog&script=delete_comment&id='.$row['id'].'&blog_id='.$_GET['id'].'\',\'Vil du slette kommentaren af '.get_by_id("name", $row['author']).'?\')">Slet</span></p>';
+					echo
+				'<p>'.format_text(str_replace("<br />", "<br>", nl2br($row['text']))).'</p>';
 					echo '
 			</div>';
 				}
@@ -71,6 +73,10 @@ else
 					elseif ($_GET['return'] == "comment_ok")
 					{
 						$return = '<p class="ok">Kommentar gemt</p>';						
+					}
+					elseif ($_GET['return'] == "comment_delete_ok")
+					{
+						$return = '<p class="ok">Kommentaren blev slettet</p>';						
 					}
 				}
 				

@@ -1,5 +1,5 @@
 <?php
-echo '</div>
+echo '
 	</div>
 </div>
 </body>
