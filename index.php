@@ -1,4 +1,5 @@
 <?
+//This is where it all starts
 session_start();
 ob_start();
 //Get top and menu
