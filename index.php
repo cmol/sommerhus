@@ -12,6 +12,7 @@ require("req/form.php");
 require("req/get_by_id.php");
 require("req/get_date.php");
 require("req/text_format.php");
+require("req/cut_after_x.php");
 
 
 //Get file contet, or get "front.php" page

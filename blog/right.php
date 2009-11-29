@@ -13,7 +13,8 @@ else
 			<a href="?domain=blog&script=edit">Tilf&oslash;j blog</a><br>
 			<a href="?domain=blog&script=search&search_by=all">Vis liste over blogs</a><br>
 			<a href="?domain=blog&script=tags">Vis alle tags</a><br>
-			<input type="text" name="search"><input type="submit" value="S&oslash;g">
+			<input type="text" name="search" id="search_bar_right">
+			<input onclick="javascript:search()" type="button" value="S&oslash;g">
 		</div>';
 	}
 }

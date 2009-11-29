@@ -37,7 +37,7 @@ else
 				while($row = mysql_fetch_assoc($query))
 				{
 					echo '
-				<tr><td><a href="?domain=blog&script=blog&id='.$row['id'].'">'.$row['title'].'</a> - '.get_date($row['last_edit']).' - cut_after_x(50 ish, $row[\'text\'])... </td></tr>';
+				<tr><td><a href="?domain=blog&script=blog&id='.$row['id'].'">'.$row['title'].'</a> - '.get_date($row['last_edit']).' - '.CutAfterX(un_format_text($row['text']), 70).'... </td></tr>';
 				}
 			}
 		echo '

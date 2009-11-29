@@ -36,4 +36,10 @@ function format_text($text)
 	return make_format(make_links($text));
 }
 
+function un_format_text($text)
+{
+	$find = array("[b]", "[/b]", "[u]", "[/u]", "[i]", "[/i]", "[del]", "[/del]");
+	return str_replace($find, "", $text);
+}
+
 ?>
