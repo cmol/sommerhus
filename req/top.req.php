@@ -23,12 +23,6 @@ echo '<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www
 			document.location.href=site
 		}
 	}
-	
-	function search()
-	{
-		search_string = document.getElementById("search_bar_right").value;
-		window.location.href="?domain=blog&script=search&search_by=content&title="+search_string+"&text="+search_string;
-	}
 	</script>
 </head>
 <body>

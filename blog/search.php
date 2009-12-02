@@ -22,8 +22,16 @@ else
 					break;
 					
 					case 'content':
-						$title = $_GET['title'];
-						$text = $_GET['text'];
+						if(isset($_GET['title']) || isset($_GET['text']))
+						{
+							$title = $_GET['title'];
+							$text = $_GET['text'];
+						}
+						else
+						{
+							$title = $_POST['title'];
+							$text = $_POST['text'];
+						}
 						$query_string = "SELECT * FROM blog_post WHERE title LIKE '%$title%' OR text LIKE '%$text%' ORDER BY date DESC";
 					break;
 					
