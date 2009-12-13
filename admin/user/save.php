@@ -38,7 +38,7 @@ else
 			else
 			{
 				# Make
-				$password = $_GET['password'];
+				$password = $_POST['password'];
 				$password = md5($password);
 				
 				mysql_query("INSERT INTO user (name, email, tlf, address, groups, familyGrp, password) VALUES ('$name', '$email', '$tlf', '$address', '$groups', '$familyGrp', '$password')") or die(mysql_error());
