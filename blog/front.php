@@ -31,8 +31,16 @@ else
 				<p class="author">Skrevet af: <a href="?domain=user&script=show&id='.$row['author'].'">'.get_by_id("name", $row['author']).'</a> '.get_date($row['date']).'';
 				if($row['last_edit'] != 0) echo ' - Sidst redigeret '.get_date($row['last_edit']);
 				if($row['author'] == $_SESSION['user_id']) echo ' - <a href="?domain=blog&script=edit&id='.$row['id'].'">Rediger</a>';
-				echo '</p>
-				<p>'.format_text(str_replace("<br />", "<br>", nl2br($row['text']))).'</p>
+				echo '</p>';
+				$formText = format_text(str_replace("<br />", "<br>", nl2br($row['text'])));
+				
+				if(strpos($formText, "##DEL##"))
+				{
+					$pos = strpos($formText, "##DEL##");
+					$formText = substr($formText, 0, $pos);
+				}
+				echo'
+				<p>'.$formText.'</p>
 				<p class="tags"><i>Tags: </i>';
 				$tags = explode(" ", $row['tags']);
 				foreach($tags as $tag)

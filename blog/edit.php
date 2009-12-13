@@ -39,7 +39,8 @@ else
 			$id = $_GET['id'];
 			echo '<form method="post" action="?domain=blog&script=save">';
 			echo MakeForm("Titel", "title", "", "tf", true, "Du skal skrive en titel");
-			echo MakeForm("Tekst", "text", "", "ta", true, "Du skal skrive noget indhold", "large");
+			echo MakeForm("Tekst", "text", "OM SKIVNING AF BLOGS:\nS&oslash;rg for at l&aelig;se dine blogs igennem f&oslash;r du opretter dem!!!\n\nLav gerne en 'teaser', og skriv '##DEL##' efter din teaser. S&aring; vil teaseren blive vist på forsiden, og resten n&aring;r man klikker sig ind p&aring; bloggen.\n\nDu kan bruge nedenst&aring;ende til formatering.", "ta", true, "Du skal skrive noget indhold", "large");
+			echo '<p>[b]<b>fed</b>[/b] - [u]<u>understreget</u>[/u] - [i]<i>kursiv</i>[/i] - [del]<del>gennemstreget</del>[/del]</p>';
 			echo MakeForm("Tags", "tags", "", "tf", true, "Du skal skrive nogen tags (fx. stue male omm&oslash;blering)");
 			echo Makeform("", "submit", "Opret", "submit", "", "");
 			echo "</form>";
