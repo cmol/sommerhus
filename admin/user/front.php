@@ -33,9 +33,12 @@ else
 			}
 			
 			
-			$query = mysql_query("SELECT * FROM ".$db_prefix."user ORDER BY name ASC") or die(mysql_error());
+			$query = mysql_query("SELECT user.id, name, email, tlf, address, groups, famName FROM user, familyGrps WHERE familyGrp = familyGrps.id ORDER BY name ASC") or die(mysql_error());
 			while($row = mysql_fetch_assoc($query))
 			{
+				/*echo '<pre>';
+				print_r($row);
+				echo '</pre>';*/
 				echo '
 				<div class="user_list">
 					<div class="user_info">
@@ -67,6 +70,9 @@ else
 						echo $grp . " ";
 					}
 				echo'</p>
+					</div>
+					<div class="famName">
+						<p><b>Gruppe: </b>'.$row['famName'].'</p>
 					</div>
 				</div>';
 			}
