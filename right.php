@@ -7,14 +7,14 @@ else
 {
 	if($good)
 	{
-		echo '
+		/*echo '
 		<div id="right">
 			<h2>Right!</h2>
 			<pre>';
 			print_r($_SESSION);
 			echo $_SESSION['name'];
 			echo'</pre>
-		</div>';
+		</div>';*/
 	}
 }
 ?>
