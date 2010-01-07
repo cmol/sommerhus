@@ -184,12 +184,14 @@ div.blog_container a.title:hover {
 	font-weight: bold;
 }
 
-div.blog_container p.author {
+/* Removed div.blog_container due to use of the p.author in the calendar section */
+p.author {
  font-style: italic;
  color: #555; 
 }
 
-div.blog_container p.author a {
+/* Removed div.blog_container due to use of the p.author in the calendar section */
+p.author a {
  font-style: italic;
  color: #555; 
 }
@@ -198,6 +200,7 @@ div.blog_comment {
 	border-bottom: 1px dotted #000;
 }
 
+/*
 div.blog_comment p.author {
  font-style: italic;
  color: #555; 
@@ -206,7 +209,7 @@ div.blog_comment p.author {
 div.blog_comment p.author a {
  font-style: italic;
  color: #555; 
-}
+}*/
 
 #do_comment .right {
 	float: right;
@@ -274,7 +277,7 @@ p.user_data input,textarea,select {
 	width: 48%;
 }
 
-.alert {
+.alert, #booking #largeEdit .alert {
 	color: #f00;
 	font-weight: bold;			
 	border: 3px solid red;
@@ -283,7 +286,7 @@ p.user_data input,textarea,select {
 	padding: 5px;
 }
 
-.ok {
+.ok, #booking #largeEdit .ok {
 	color: green;
 	font-weight: bold;			
 	border: 3px solid green;
@@ -303,4 +306,83 @@ textarea.large_ta {
 	width: 100%;
 }
 
+#booking {
+	
+}
+
+#booking input {
+	width: 60px;
+	font-size: 10px;
+}
+#booking textarea {
+	float: none;
+	font-size: 10px;
+	width: 180px;
+}
+
+#booking .alert,#booking .ok {
+	width: 100%;
+}
+
 /*  Input section end  */
+
+/*	Calendar section start */
+
+#calendar_container {
+	text-align: center;
+}
+
+div.month_container {
+	float: left;
+	margin-right: 2px;
+	width: 15.29%;
+	border: 1px solid black;
+	padding: 2px;
+	text-align: left;
+}
+
+div.month_name {
+	width: 100%;
+	font-weight: bold;
+	text-align: center;
+}
+
+span.cal_week {
+	float: right;
+	border-top: 1px solid black;
+	width: 30%;
+}
+
+span.cal_day {
+	float: left;
+	width: 70%;
+}
+
+span.cal_day_monday {
+	float: left;
+	border-top: 1px solid black;
+	width: 70%;
+}
+
+span.cal_day_weekend {
+	float: left;
+	width: 70%;
+}
+
+div.booking {
+	float: left;
+	width: 75%;
+	cursor: pointer;
+}
+
+div.day {
+	float: left;
+	width: 20%;
+}
+
+#prevNext {
+	text-align: center;
+	width: 100%;
+}
+
+/*	Calendar section end */

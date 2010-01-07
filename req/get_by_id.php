@@ -14,6 +14,12 @@ function get_by_id($do, $id)
 			$gbid_num = mysql_num_rows($gbid_query);
 			return $gbid_num;
 		break;
+		
+		case 'userGroup':
+			$gbid_query = mysql_query("SELECT familyGrp FROM user WHERE id = '$id'");
+			$row = mysql_fetch_assoc($gbid_query);
+			return $row['familyGrp'];
+		break;
 				
 		default:
 			# code...

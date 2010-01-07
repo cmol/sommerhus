@@ -24,6 +24,7 @@ else
 					$_SESSION['user_id'] = $row['id'];
 					$_SESSION['name'] = $row['name'];
 					$_SESSION['groups'] = $row['groups'];
+					$_SESSION['familyGrp'] = $row['familyGrp'];
 					$_SESSION['id'] = session_id();
 				}
 				$time = time();

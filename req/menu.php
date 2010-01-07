@@ -15,7 +15,7 @@ if(isset($_SESSION['checksum']))
 	$menu = array(
 		"Forside"					=>	"?",
 		"Blog"						=>	"?domain=blog",
-		"Kalender"				=>	"#",
+		"Kalender"				=>	"?domain=calendar",
 		"Administration"	=>	"?domain=admin"
 	);
 	if(!strstr($_SESSION['groups'], "administration"))

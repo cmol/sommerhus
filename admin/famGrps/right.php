@@ -9,7 +9,7 @@ else
 	{
 		echo '
 		<div id="right">
-			<h2>:: menu ::</h2>
+			<h2>Menu</h2>
 			<a href="?domain=admin/famGrps">Gruppe admin forside</a><br>
 			<a href="?domain=admin/famGrps&script=edit">Tilf&oslash;j gruppe</a>
 		</div>';
