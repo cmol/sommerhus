@@ -43,4 +43,6 @@ else // return simple date form (without the today thing)
 	return str_replace($find, $replace, date('\d. j M Y', $time));
 }
 
+}
+
 ?>
