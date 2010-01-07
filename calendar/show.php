@@ -21,7 +21,7 @@ else
 				$row = mysql_fetch_assoc($query);
 			
 				echo'
-			<h2>Fra '.get_date($row['startDate']).' til '.get_date($row['endDate']).'</h2>
+			<h2>Fra '.get_date($row['startDate'], "simple").' til '.get_date($row['endDate'], "simple").'</h2>
 			<p class="author">Booket af <a href="?domain=user&script=show&id='.$row['bookingUser'].'">'.$row['name'].'</a> '.get_date($row['bookingTime']).'</p>
 			<p><b>Kommentar:</b> '.$row['comment'].'</p><br>';
 				
