@@ -1,4 +1,4 @@
-<?
+<?php
 $access = "users,calendar-edit"; //make false if all access
 if(substr($_SERVER["SCRIPT_NAME"], -9, 9) != "index.php")
 {
@@ -48,8 +48,8 @@ else
 			$startDate = mktime(6, 0, 0, $sDateE['1'], $sDateE['0'], $sDateE['2']);
 			$endDate = mktime(14, 0, 0, $eDateE['1'], $eDateE['0'], $eDateE['2']);
 			
-			$query = mysql_query("SELECT id FROM calendar_bookings WHERE (startDate <= '$startDate' OR startDate <= '$endDate') AND (endDate >= '$startDate' OR endDate >= '$endDate')") or die(mysql_error());
-			if(mysql_num_rows($query) > 0)
+			$query = mysqli_query($connection, "SELECT id FROM calendar_bookings WHERE (startDate <= '$startDate' OR startDate <= '$endDate') AND (endDate >= '$startDate' OR endDate >= '$endDate')") or die(mysqli_error());
+			if(mysqli_num_rows($query) > 0)
 			{
 				header("location: ?domain=calendar&return=booking_overlap&start=$start");
 			}
@@ -65,7 +65,7 @@ else
 					$bookingFamily = get_by_id("userGroup", $userId);
 					$now = time();
 					
-					mysql_query("INSERT INTO calendar_bookings (startDate, endDate, bookingFamily, bookingTime, bookingUser, comment) VALUES ('$startDate', '$endDate', '$bookingFamily', '$now', '$userId', '$comment')") or die(mysql_error());
+					mysqli_query($connection, "INSERT INTO calendar_bookings (startDate, endDate, bookingFamily, bookingTime, bookingUser, comment) VALUES ('$startDate', '$endDate', '$bookingFamily', '$now', '$userId', '$comment')") or die(mysqli_error());
 					header("location: ?domain=calendar&return=make_ok&start=$start");
 				}
 			}

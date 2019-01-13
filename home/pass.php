@@ -1,4 +1,4 @@
-<?
+<?php
 $access = "users"; //make false if all access
 if(substr($_SERVER["SCRIPT_NAME"], -9, 9) != "index.php")
 {

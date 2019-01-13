@@ -1,4 +1,4 @@
-<?
+<?php
 $access = "users,calendar-edit"; //make false if all access
 if(substr($_SERVER["SCRIPT_NAME"], -9, 9) != "index.php")
 {
@@ -28,8 +28,8 @@ else
 			$startDate = mktime(6, 0, 0, $sDateE['1'], $sDateE['0'], $sDateE['2']);
 			$endDate = mktime(14, 0, 0, $eDateE['1'], $eDateE['0'], $eDateE['2']);
 			
-			$query = mysql_query("SELECT id FROM calendar_bookings WHERE (startDate <= '$startDate' OR startDate <= '$endDate') AND (endDate >= '$startDate' OR endDate >= '$endDate') AND id != '$id'") or die(mysql_error());
-			if(mysql_num_rows($query) > 0)
+			$query = mysqli_query($connection, "SELECT id FROM calendar_bookings WHERE (startDate <= '$startDate' OR startDate <= '$endDate') AND (endDate >= '$startDate' OR endDate >= '$endDate') AND id != '$id'") or die(mysqli_error());
+			if(mysqli_num_rows($query) > 0)
 			{
 				header("location: ?domain=calendar&script=show&id=$id&return=booking_overlap&start=$start");
 			}
@@ -45,7 +45,7 @@ else
 					$bookingFamily = get_by_id("userGroup", $userId);
 					$now = time();
 					
-					mysql_query("UPDATE calendar_bookings SET startDate = '$startDate', endDate = '$endDate', bookingUser = '$userId', comment = '$comment' WHERE id = '$id'") or die(mysql_error());
+					mysqli_query($connection, "UPDATE calendar_bookings SET startDate = '$startDate', endDate = '$endDate', bookingUser = '$userId', comment = '$comment' WHERE id = '$id'") or die(mysqli_error());
 					header("location: ?domain=calendar&script=show&id=$id&return=make_ok&start=$start");
 				}
 			}

@@ -1,4 +1,4 @@
-<?
+<?php
 //This is where it all starts
 session_start();
 ob_start();

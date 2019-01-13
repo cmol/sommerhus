@@ -1,4 +1,4 @@
-<?
+<?php
 $access = "users"; //make false if all access
 if(substr($_SERVER["SCRIPT_NAME"], -9, 9) != "index.php")
 {
@@ -68,8 +68,8 @@ else
 		
 		// Get data for this period and store it in an array (theres no need make 180 some mysql calls for showing his calendar!!!)
 		
-		$query = mysql_query("SELECT calendar_bookings.id, startDate, endDate, color, comment, famName FROM calendar_bookings, familyGrps WHERE bookingFamily = familyGrps.id AND (endDate > '$day' AND startDate < '$end')") or die(mysql_error());
-		for($y = 0; $row = mysql_fetch_assoc($query); $y++)
+		$query = mysqli_query($connection, "SELECT calendar_bookings.id, startDate, endDate, color, comment, famName FROM calendar_bookings, familyGrps WHERE bookingFamily = familyGrps.id AND (endDate > '$day' AND startDate < '$end')") or die(mysqli_error());
+		for($y = 0; $row = mysqli_fetch_assoc($query); $y++)
 		{
 			$calData[$y]['id'] = $row['id'];
 			$calData[$y]['startDate'] = $row['startDate'];

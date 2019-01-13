@@ -1,4 +1,4 @@
-<?
+<?php
 $access = "users,administration,blog-edit"; //make false if all access
 if(substr($_SERVER["SCRIPT_NAME"], -9, 9) != "index.php")
 {

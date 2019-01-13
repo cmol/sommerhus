@@ -1,4 +1,4 @@
-<?
+<?php
 $access = false; //make false if all access
 if(substr($_SERVER["SCRIPT_NAME"], -9, 9) != "index.php")
 {
@@ -11,14 +11,14 @@ else
 	{
 		if($_POST['email'] != "" && $_POST['pass'] != "")
 		{
-			$email = clean($_POST['email']);
+      $email = clean($_POST['email'], $connection);
 			$pass = $_POST['pass'];
 			$md5pass = md5($pass);
-			$query = mysql_query("SELECT * FROM ".$db_prefix."user where email = '$email' AND password = '$md5pass' LIMIT 1") or die(mysql_error());
-		 	$num = mysql_num_rows($query);
+			$query = mysqli_query($connection, "SELECT * FROM ".$db_prefix."user where email = '$email' AND password = '$md5pass' LIMIT 1") or die(mysql_error());
+		 	$num = mysqli_num_rows($query);
 			if($num == 1)
 			{
-				while ($row = mysql_fetch_assoc($query))
+				while ($row = mysqli_fetch_assoc($query))
 				{
 					$_SESSION['checksum'] = md5($row['id'].$row['groups'].session_id());
 					$_SESSION['user_id'] = $row['id'];
@@ -29,7 +29,7 @@ else
 				}
 				$time = time();
 				$uid = $row['id'];
-				mysql_query("UPDATE ".$db_prefix."user SET last_online = '$time' WHERE id = '$uid'") or die(mysql_error());
+				mysqli_query($connection, "UPDATE ".$db_prefix."user SET last_online = '$time' WHERE id = '$uid'") or die(mysql_error());
 				header("location: ?");
 				echo session_id();
 			}

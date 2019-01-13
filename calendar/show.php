@@ -1,4 +1,4 @@
-<?
+<?php
 $access = "users"; //make false if all access
 if(substr($_SERVER["SCRIPT_NAME"], -9, 9) != "index.php")
 {
@@ -15,10 +15,10 @@ else
 		if (isset($_GET['id']) && is_numeric($_GET['id'])) // Test for valid input
 		{
 			$id = $_GET['id'];
-			$query = mysql_query("SELECT calendar_bookings.id, startDate, endDate, color, comment, famName, name, bookingTime, bookingFamily FROM calendar_bookings, familyGrps, user WHERE bookingFamily = familyGrps.id AND calendar_bookings.id = '$id' AND bookingUser = user.id LIMIT 1") or die(mysql_error());
-			if (mysql_num_rows($query) > 0) // Test if record with that ID exists
+			$query = mysqli_query($connection, "SELECT calendar_bookings.id, startDate, endDate, color, comment, famName, name, bookingTime, bookingFamily FROM calendar_bookings, familyGrps, user WHERE bookingFamily = familyGrps.id AND calendar_bookings.id = '$id' AND bookingUser = user.id LIMIT 1") or die(mysqli_error());
+			if (mysqli_num_rows($query) > 0) // Test if record with that ID exists
 			{
-				$row = mysql_fetch_assoc($query);
+				$row = mysqli_fetch_assoc($query);
 			
 				echo'
 			<h2>Fra '.get_date($row['startDate'], "simple").' til '.get_date($row['endDate'], "simple").'</h2>
