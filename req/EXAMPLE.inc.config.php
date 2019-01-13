@@ -1,5 +1,5 @@
 <?php
-$connection = mysql_connect("SERVER","USERNAME","PASSWORD"); 
-mysql_select_db("DATABASE", $connection) or die(mysql_error());
+$connection = mysqli_connect("SERVER","USERNAME","PASSWORD"); 
+mysqli_select_db($connection, "DATABASE") or die(mysqli_error());
 $db_prefix = "";
 ?>

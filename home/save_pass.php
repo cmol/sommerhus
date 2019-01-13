@@ -26,12 +26,12 @@ else
 			}
 			else
 			{
-				$query = mysql_query("SELECT * FROM user WHERE id = '$id' AND password = '$md5_pass_old'") or die(mysql_error());
-				$num = mysql_num_rows($query);
+				$query = mysqli_query($connection,"SELECT * FROM user WHERE id = '$id' AND password = '$md5_pass_old'") or die(mysqli_error());
+				$num = mysqli_num_rows($query);
 				if ($num == "1")
 				{
 					$md5pass = md5($pass_one);
-					mysql_query("UPDATE user set password = '$md5pass' WHERE id = '$id' LIMIT 1") or die(mysql_error());
+					mysqli_query($connection,"UPDATE user set password = '$md5pass' WHERE id = '$id' LIMIT 1") or die(mysqli_error());
 					header("location: ?domain=home&return=pass_update_ok");
 				}
 				else

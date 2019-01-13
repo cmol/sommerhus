@@ -27,7 +27,7 @@ else
 				{
 					$user_id = $_SESSION['user_id'];
 				
-					mysql_query("INSERT INTO blog_comment (author, text, date, belong_to) VALUES ('$user_id', '$text', '$date', '$blog_id')") or die(mysql_error());
+					mysqli_query($connection,"INSERT INTO blog_comment (author, text, date, belong_to) VALUES ('$user_id', '$text', '$date', '$blog_id')") or die(mysqli_error());
 					header("location: ?domain=blog&script=blog&id=$blog_id&return=comment_ok");
 				}
 				else

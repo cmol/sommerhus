@@ -15,8 +15,8 @@ else
 
 		echo '<h1>Rediger dine data</h1>';
 		$id = $_SESSION['user_id'];
-		$query = mysql_query("SELECT * FROM user WHERE id = '$id' LIMIT 1") or die(mysql_error());
-		$row = mysql_fetch_assoc($query);
+		$query = mysqli_query($connection,"SELECT * FROM user WHERE id = '$id' LIMIT 1") or die(mysqli_error());
+		$row = mysqli_fetch_assoc($query);
 		echo '<form method="post" action="?domain=home&script=save&id='.$id.'">';
 		echo MakeForm("Navn", "name", $row['name'], "tf", true, "Du skal angive et navn");
 		echo MakeForm("Email", "email", $row['email'], "tf", true, "Du skal angive en email");

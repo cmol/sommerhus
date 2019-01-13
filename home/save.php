@@ -27,7 +27,7 @@ else
 			{
 				$id = $_GET['id'];
 								
-				mysql_query("UPDATE user set name = '$name', email = '$email', tlf = '$tlf', address = '$address' WHERE id = '$id' LIMIT 1") or die(mysql_error());
+				mysqli_query($connection,"UPDATE user set name = '$name', email = '$email', tlf = '$tlf', address = '$address' WHERE id = '$id' LIMIT 1") or die(mysqli_error());
 				header("location: ?domain=home&return=update_ok");
 			}
 			else

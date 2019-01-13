@@ -33,8 +33,8 @@ else
 			}
 			
 			
-			$query = mysql_query("SELECT user.id, name, email, tlf, address, groups, famName FROM user, familyGrps WHERE familyGrp = familyGrps.id ORDER BY name ASC") or die(mysql_error());
-			while($row = mysql_fetch_assoc($query))
+			$query = mysqli_query($connection,"SELECT user.id, name, email, tlf, address, groups, famName FROM user, familyGrps WHERE familyGrp = familyGrps.id ORDER BY name ASC") or die(mysqli_error());
+			while($row = mysqli_fetch_assoc($query))
 			{
 				/*echo '<pre>';
 				print_r($row);

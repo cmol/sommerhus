@@ -26,7 +26,7 @@ if($access != false)
 				$good = true;
 				echo '<!--access granted-->';
 				$id = $_SESSION['user_id'];
-				$query = mysqli_query($connection, "SELECT * FROM ".$db_prefix."user where id = '$id' LIMIT 1") or die(mysql_error());
+				$query = mysqli_query($connection, "SELECT * FROM ".$db_prefix."user where id = '$id' LIMIT 1") or die(mysqli_error());
 				while ($row = mysqli_fetch_assoc($query))
 				{
 					$user['id'] = $row['id'];

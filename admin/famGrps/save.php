@@ -18,13 +18,13 @@ else
 		if (isset($_GET['id']))
 		{
 			$id = $_GET['id'];
-			mysql_query("UPDATE familyGrps SET color = '$color', famName = '$famName' WHERE id = '$id' LIMIT 1") or die(mysql_error());
+			mysqli_query($connection,"UPDATE familyGrps SET color = '$color', famName = '$famName' WHERE id = '$id' LIMIT 1") or die(mysqli_error());
 			header("location: ?domain=admin/famGrps&return=update_ok");
 		}
 		// Create new group
 		else
 		{
-			mysql_query("INSERT INTO familyGrps (color, famName) VALUES ('$color', '$famName')") or die(mysql_error());
+			mysqli_query($connection,"INSERT INTO familyGrps (color, famName) VALUES ('$color', '$famName')") or die(mysqli_error());
 			header("location: ?domain=admin/famGrps&return=make_ok");
 		}
 	}

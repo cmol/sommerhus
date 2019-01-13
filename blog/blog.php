@@ -15,8 +15,8 @@ else
 			if(isset($_GET['id']) && is_numeric($_GET['id']))
 			{
 				$id = $_GET['id'];
-				$query = mysql_query("SELECT * FROM blog_post where id = '$id'") or die(mysql_error());
-				$row = mysql_fetch_assoc($query);
+				$query = mysqli_query($connection,"SELECT * FROM blog_post where id = '$id'") or die(mysqli_error());
+				$row = mysqli_fetch_assoc($query);
 				
 				echo '
 			<div class="blog_container">
@@ -43,14 +43,14 @@ else
 				echo '
 			<h2>Kommentarer</h2>';
 				
-				$query = mysql_query("SELECT * FROM blog_comment where belong_to = '$id' ORDER BY date ASC") or die(mysql_error());
-				$num = mysql_num_rows($query);
+				$query = mysqli_query($connection,"SELECT * FROM blog_comment where belong_to = '$id' ORDER BY date ASC") or die(mysqli_error());
+				$num = mysqli_num_rows($query);
 				if($num < 1)
 				{
 					echo '<p><i>Der er endnu ikke nogen kommentarer</i></p>';
 				}
 				
-				while($row = mysql_fetch_assoc($query))
+				while($row = mysqli_fetch_assoc($query))
 				{
 					echo '
 			<div class="blog_comment">';

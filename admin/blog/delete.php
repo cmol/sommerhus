@@ -14,8 +14,8 @@ else
 			if (isset($_GET['id']) && is_numeric($_GET['id']))
 			{
 				$id = $_GET['id'];
-				mysql_query("DELETE FROM blog_post WHERE id = '$id' LIMIT 1") or die(mysql_error());
-				mysql_query("DELETE FROM blog_comment WHERE belong_to = '$id'") or die(mysql_error());
+				mysqli_query($connection,"DELETE FROM blog_post WHERE id = '$id' LIMIT 1") or die(mysqli_error());
+				mysqli_query($connection,"DELETE FROM blog_comment WHERE belong_to = '$id'") or die(mysqli_error());
 				header("location: ?domain=admin/blog&return=blog_delete_ok");
 			}
 		echo'

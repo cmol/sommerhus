@@ -15,7 +15,7 @@ else
 			{
 				# Delete user
 				$id = $_GET['id'];
-				mysql_query("DELETE FROM user WHERE id = '$id' LIMIT 1") or die(mysql_error());
+				mysqli_query($connection,"DELETE FROM user WHERE id = '$id' LIMIT 1") or die(mysqli_error());
 				header("location: ?domain=admin/user&return=delete_ok");
 			}
 			else

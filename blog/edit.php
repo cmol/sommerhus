@@ -16,8 +16,8 @@ else
 		{
 			echo '<h1>Rediger blog</h1>';
 			$id = $_GET['id'];
-			$query = mysql_query("SELECT * FROM blog_post WHERE id = '$id' LIMIT 1") or die(mysql_error());
-			$row = mysql_fetch_assoc($query);
+			$query = mysqli_query($connection,"SELECT * FROM blog_post WHERE id = '$id' LIMIT 1") or die(mysqli_error());
+			$row = mysqli_fetch_assoc($query);
 			if($row['author'] == $_SESSION['user_id'] || strstr($_SESSION['groups'], "blog-admin"))
 			{
 				echo '<form method="post" action="?domain=blog&script=save&id='.$id.'">';

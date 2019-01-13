@@ -39,10 +39,10 @@ else
 						$query_string = "SELECT * FROM blog_post ORDER BY date DESC";
 					break;
 				}
-				$query = mysql_query($query_string) or die(mysql_error());
+				$query = mysqli_query($connection,$query_string) or die(mysqli_error());
 				echo '
 			<table width="100%">';
-				while($row = mysql_fetch_assoc($query))
+				while($row = mysqli_fetch_assoc($query))
 				{
 					echo '
 				<tr><td><a href="?domain=blog&script=blog&id='.$row['id'].'">'.$row['title'].'</a> - '.get_date($row['last_edit']).' - '.CutAfterX(un_format_text($row['text']), 70).'... </td></tr>';

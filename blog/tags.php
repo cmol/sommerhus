@@ -13,8 +13,8 @@ else
 		<div id="left">
 			<h1>Tags</h1>';
 			$tag_list = array();
-			$query = mysql_query("SELECT tags FROM blog_post") or die(mysql_error());
-			while($row = mysql_fetch_assoc($query))
+			$query = mysqli_query($connection,"SELECT tags FROM blog_post") or die(mysqli_error());
+			while($row = mysqli_fetch_assoc($query))
 			{
 				$tags = explode(" ", $row['tags']);
 				foreach ($tags as $tag)

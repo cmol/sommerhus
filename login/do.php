@@ -14,7 +14,7 @@ else
       $email = clean($_POST['email'], $connection);
 			$pass = $_POST['pass'];
 			$md5pass = md5($pass);
-			$query = mysqli_query($connection, "SELECT * FROM ".$db_prefix."user where email = '$email' AND password = '$md5pass' LIMIT 1") or die(mysql_error());
+			$query = mysqli_query($connection, "SELECT * FROM ".$db_prefix."user where email = '$email' AND password = '$md5pass' LIMIT 1") or die(mysqli_error());
 		 	$num = mysqli_num_rows($query);
 			if($num == 1)
 			{
@@ -29,7 +29,7 @@ else
 				}
 				$time = time();
 				$uid = $row['id'];
-				mysqli_query($connection, "UPDATE ".$db_prefix."user SET last_online = '$time' WHERE id = '$uid'") or die(mysql_error());
+				mysqli_query($connection, "UPDATE ".$db_prefix."user SET last_online = '$time' WHERE id = '$uid'") or die(mysqli_error());
 				header("location: ?");
 				echo session_id();
 			}

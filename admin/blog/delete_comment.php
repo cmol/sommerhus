@@ -15,7 +15,7 @@ else
 		{
 			$id = $_GET['id'];
 			$blog_id = $_GET['blog_id'];
-			mysql_query("DELETE FROM blog_comment WHERE id = '$id' LIMIT 1") or die(mysql_error());
+			mysqli_query($connection,"DELETE FROM blog_comment WHERE id = '$id' LIMIT 1") or die(mysqli_error());
 			header("location: ?domain=blog&script=blog&id=$blog_id&return=comment_delete_ok#do_comment");
 		}
 		echo'

@@ -34,10 +34,10 @@ else
 		}
 		// counting the offset
 		$offset = ($pageNum - 1) * $rowsPerPage;
-		$query = mysql_query("SELECT * FROM blog_post ORDER BY date desc LIMIT $offset, $rowsPerPage") or die(mysql_error());
+		$query = mysqli_query($connection,"SELECT * FROM blog_post ORDER BY date desc LIMIT $offset, $rowsPerPage") or die(mysqli_error());
 		echo '
 			<table>';
-		while ($row = mysql_fetch_assoc($query))
+		while ($row = mysqli_fetch_assoc($query))
 		{
 			echo '
 				<tr><td>
@@ -61,8 +61,8 @@ else
 		}
 				
 		// Making navigation for previous and next
-		$query = mysql_query("SELECT * FROM blog_post") or die(mysql_error());
-		$blog_total = mysql_num_rows($query);
+		$query = mysqli_query($connection,"SELECT * FROM blog_post") or die(mysqli_error());
+		$blog_total = mysqli_num_rows($query);
 		
 		echo '
 			<div id="prev_next">';

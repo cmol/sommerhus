@@ -12,9 +12,9 @@ else
 		if(isset($_GET['id']) && is_numeric($_GET['id']) && $_GET['id'] != "1");
 		{
 			$id = $_GET['id'];
-			mysql_query("DELETE FROM familyGrps WHERE id = '$id' LIMIT 1") or die(mysql_error());
+			mysqli_query($connection,"DELETE FROM familyGrps WHERE id = '$id' LIMIT 1") or die(mysqli_error());
 			
-			mysql_query("UPDATE user SET familyGrp = '1' WHERE familyGrp = '$id'") or die(mysql_error());
+			mysqli_query($connection,"UPDATE user SET familyGrp = '1' WHERE familyGrp = '$id'") or die(mysqli_error());
 			header("location: ?domain=admin/famGrps");
 		}
 		elseif($_GET['id'] == "1")

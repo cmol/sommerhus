@@ -17,8 +17,8 @@ else
 		{
 			echo '<h1>Rediger bruger</h1>';
 			$id = $_GET['id'];
-			$query = mysql_query("SELECT * FROM user WHERE id = '$id' LIMIT 1") or die(mysql_error());
-			$row = mysql_fetch_assoc($query);
+			$query = mysqli_query($connection,"SELECT * FROM user WHERE id = '$id' LIMIT 1") or die(mysqli_error());
+			$row = mysqli_fetch_assoc($query);
 			echo '<form method="post" action="?domain=admin/user&script=save&id='.$id.'">';
 			echo MakeForm("Navn", "name", $row['name'], "tf", true, "Du skal angive et navn");
 			echo MakeForm("Email", "email", $row['email'], "tf", true, "Du skal angive en email");
@@ -29,8 +29,8 @@ else
 			$familyGrp = $row['familyGrp'];
 			echo '
 			<p class="user_data"><span class="user_data">Gruppe: </span><select name="familyGrp">';
-			$query = mysql_query("SELECT famName, id FROM familyGrps ORDER BY id") or die(mysql_error());
-			while ($row = mysql_fetch_assoc($query))
+			$query = mysqli_query($connection,"SELECT famName, id FROM familyGrps ORDER BY id") or die(mysqli_error());
+			while ($row = mysqli_fetch_assoc($query))
 			{
 				echo '
 				<option value="'.$row['id'].'"';
@@ -56,8 +56,8 @@ else
 			
 			echo '
 			<p class="user_data"><span class="user_data">Gruppe: </span><select name="familyGrp">';
-			$query = mysql_query("SELECT famName, id FROM familyGrps ORDER BY id") or die(mysql_error());
-			while ($row = mysql_fetch_assoc($query))
+			$query = mysqli_query($connection,"SELECT famName, id FROM familyGrps ORDER BY id") or die(mysqli_error());
+			while ($row = mysqli_fetch_assoc($query))
 			{
 				echo '
 				<option value="'.$row['id'].'">'.$row['famName'].'</option>'; 

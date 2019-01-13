@@ -17,9 +17,9 @@ else
 			echo '
 			<h1>Rediger gruppe</h1>';
 			$id = $_GET['id'];
-			$query = mysql_query("SELECT id, famName, color FROM familyGrps WHERE id = '$id' LIMIT 1") or die(mysql_error());
+			$query = mysqli_query($connection,"SELECT id, famName, color FROM familyGrps WHERE id = '$id' LIMIT 1") or die(mysqli_error());
 			
-			$row = mysql_fetch_assoc($query);
+			$row = mysqli_fetch_assoc($query);
 			echo '
 			<form method="post" action="?domain=admin/famGrps&script=save&id='.$id.'">';
 			echo MakeForm("Navn", "famName", $row['famName'], "tf", true, "Du skal angive et navn");

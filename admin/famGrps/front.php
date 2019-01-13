@@ -36,9 +36,9 @@ else
 		}
 		
 		
-		$query = mysql_query("SELECT name, user.id AS uid, familyGrps.id, famName, color FROM user, familyGrps WHERE familyGrp = familyGrps.id ORDER BY famName") or die(mysql_error());
+		$query = mysqli_query($connection,"SELECT name, user.id AS uid, familyGrps.id, famName, color FROM user, familyGrps WHERE familyGrp = familyGrps.id ORDER BY famName") or die(mysqli_error());
 		$currentFamily = null;
-		while($row = mysql_fetch_assoc($query))
+		while($row = mysqli_fetch_assoc($query))
 		{
 			if ($row['famName'] == $currentFamily)
 			{

@@ -32,7 +32,7 @@ else
 			{
 				$id = $_GET['id'];
 								
-				mysql_query("UPDATE user set name = '$name', email = '$email', tlf = '$tlf', address = '$address', groups = '$groups', familyGrp = '$familyGrp' WHERE id = '$id' LIMIT 1") or die(mysql_error());
+				mysqli_query($connection,"UPDATE user set name = '$name', email = '$email', tlf = '$tlf', address = '$address', groups = '$groups', familyGrp = '$familyGrp' WHERE id = '$id' LIMIT 1") or die(mysqli_error());
 				header("location: ?domain=admin/user&return=update_ok");
 			}
 			else
@@ -41,7 +41,7 @@ else
 				$password = $_POST['password'];
 				$password = md5($password);
 				
-				mysql_query("INSERT INTO user (name, email, tlf, address, groups, familyGrp, password) VALUES ('$name', '$email', '$tlf', '$address', '$groups', '$familyGrp', '$password')") or die(mysql_error());
+				mysqli_query($connection,"INSERT INTO user (name, email, tlf, address, groups, familyGrp, password) VALUES ('$name', '$email', '$tlf', '$address', '$groups', '$familyGrp', '$password')") or die(mysqli_error());
 				header("location: ?domain=admin/user&return=make_ok");
 				
 			}

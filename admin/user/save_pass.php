@@ -25,7 +25,7 @@ else
 			else
 			{
 				$md5pass = md5($pass_one);
-				mysql_query("UPDATE user set password = '$md5pass' WHERE id = '$id' LIMIT 1") or die(mysql_error());
+				mysqli_query($connection,"UPDATE user set password = '$md5pass' WHERE id = '$id' LIMIT 1") or die(mysqli_error());
 				header("location: ?domain=admin/user&return=pass_update_ok");
 			}
 		}
